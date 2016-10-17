@@ -56,7 +56,7 @@ def print_room_items(room):
     """
     if len(room["items"]) > 0:
         print("There is " + list_of_items(room["items"]) + " here.")
-        print()
+        print("")
 
 
 def print_inventory_items(items):
@@ -71,7 +71,7 @@ def print_inventory_items(items):
     """
     if len(inventory) > 0:
         print("You have " + list_of_items(inventory) + ".")
-        print()
+        print("")
 
 
 def print_room(room):
@@ -121,12 +121,12 @@ def print_room(room):
     Note: <BLANKLINE> here means that doctest should expect a blank line.
     """
     # Display room name
-    print()
+    print("")
     print(room["name"].upper())
-    print()
+    print("")
     # Display room description
     print(room["description"])
-    print()
+    print("")
 
     print_room_items(room)
 
@@ -370,9 +370,9 @@ def main():
     # Main game loop
     while not(len(rooms["Reception"]["items"]) == 6):
         # Display game status (room description, inventory etc.)
-        print()
+        print("")
         print("MISSION: Find all items, take them, and drop them at the RECEPTION!")
-        print()
+        print("")
         print_room(current_room)
         print_inventory_items(inventory)
 
@@ -381,9 +381,9 @@ def main():
 
         # Execute the player's command
         execute_command(command)
-    print()
+    print("")
     print("Congratulations, you have won! Press enter to end.")
-    input()
+    input("")
 
 
 
