@@ -1,6 +1,5 @@
 from items import *
 from encounter import *
-from NPCs import *
 
 class room():
 	"""The base class for all rooms"""

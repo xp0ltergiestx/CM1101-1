@@ -158,24 +158,23 @@ def print_exit(direction, leads_to):
     >>> print_exit("south", "MJ and Simon's room")
     GO SOUTH to MJ and Simon's room.
     """
-    return("GO " + direction.upper() + " to " + leads_to + ".")
+    return str(("GO " + direction.upper() + " to " + leads_to + "."))
 
 
 def get_options(exits, room_items, inv_items):
-    the_options = []
+	the_options = []
+	print("You can:")
 	
-    print("You can:")
-    # Iterate over available exits
-    for direction in exits:
+	for direction in exits:
         # Print the exit name and where it leads to
-        the_options.append(print_exit(direction, exit_leads_to(exits, direction)))
+		the_options.append(print_exit(direction, exit_leads_to(exits, direction)))
 
-    for item in room_items:
-        the_options.append(("TAKE " + item.id.upper() + " to take " + item.name + "."))
-
-    for item in inv_items:
-        the_options.append(("DROP " + item.id.upper() + " to drop " + item.name + "."))
-
+	for take_item in room_items:
+		the_options.append(str(("TAKE " + take_item.id.upper() + " to take " + take_item.name + ".")))
+	
+	for drop_item in inv_items:
+		the_options.append(str(("DROP " + drop_item.id.upper() + " to drop " + drop_item.name + ".")))
+	
 	return the_options
 
 
